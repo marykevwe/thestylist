@@ -18,6 +18,11 @@ import ProClientsPage from "../pages/pro/ProClientsPage";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import AdminUsersPage from "../pages/admin/AdminUsersPage";
 import AdminBookingsPage from "../pages/admin/AdminBookingsPage";
+import AdminLayout from "../layouts/AdminLayout";
+import AdminProsPage from "../pages/admin/AdminProsPage";
+import AdminReviewsPage from "../pages/admin/AdminReviewsPage";
+import AdminSettingsPage from "../pages/admin/AdminSettingsPage";
+import AdminPaymentsPage from "../pages/admin/AdminPaymentsPage";
 
 export default function AppRoutes() {
   return (
@@ -32,25 +37,41 @@ export default function AppRoutes() {
       </Route>
 
       <Route
-        element={
-          <ProtectedRoute allowedRoles={["client", "professional", "admin"]}>
-            <DashboardLayout />
-          </ProtectedRoute>
-        }
-      >
-        <Route path="/client" element={<ProtectedRoute allowedRoles={["client"]}><ClientDashboard /></ProtectedRoute>} />
-        <Route path="/client/bookings" element={<ProtectedRoute allowedRoles={["client"]}><ClientBookingsPage /></ProtectedRoute>} />
-        <Route path="/client/reviews" element={<ProtectedRoute allowedRoles={["client"]}><ClientReviewsPage /></ProtectedRoute>} />
+  element={
+    <ProtectedRoute allowedRoles={["client", "professional"]}>
+      <DashboardLayout />
+    </ProtectedRoute>
+  }
+>
+  {/* CLIENT */}
+  <Route path="/client" element={<ClientDashboard />} />
+  <Route path="/client/bookings" element={<ClientBookingsPage />} />
+  <Route path="/client/reviews" element={<ClientReviewsPage />} />
 
-        <Route path="/pro" element={<ProtectedRoute allowedRoles={["professional"]}><ProDashboard /></ProtectedRoute>} />
-        <Route path="/pro/services" element={<ProtectedRoute allowedRoles={["professional"]}><ProServicesPage /></ProtectedRoute>} />
-        <Route path="/pro/bookings" element={<ProtectedRoute allowedRoles={["professional"]}><ProBookingsPage /></ProtectedRoute>} />
-        <Route path="/pro/clients" element={<ProtectedRoute allowedRoles={["professional"]}><ProClientsPage /></ProtectedRoute>} />
+  {/* PROFESSIONAL */}
+  <Route path="/pro" element={<ProDashboard />} />
+  <Route path="/pro/services" element={<ProServicesPage />} />
+  <Route path="/pro/bookings" element={<ProBookingsPage />} />
+  <Route path="/pro/clients" element={<ProClientsPage />} />
+</Route>
 
-        <Route path="/admin" element={<ProtectedRoute allowedRoles={["admin"]}><AdminDashboard /></ProtectedRoute>} />
-        <Route path="/admin/users" element={<ProtectedRoute allowedRoles={["admin"]}><AdminUsersPage /></ProtectedRoute>} />
-        <Route path="/admin/bookings" element={<ProtectedRoute allowedRoles={["admin"]}><AdminBookingsPage /></ProtectedRoute>} />
-      </Route>
+{/* ADMIN */}
+<Route
+  path="/admin"
+  element={
+    <ProtectedRoute allowedRoles={["admin"]}>
+      <AdminLayout />
+    </ProtectedRoute>
+  }
+>
+  <Route index element={<AdminDashboard />} />
+  <Route path="users" element={<AdminUsersPage />} />
+  <Route path="pros" element={<AdminProsPage />} />
+  <Route path="bookings" element={<AdminBookingsPage />} />
+  <Route path="reviews" element={<AdminReviewsPage />} />
+  <Route path="settings" element={<AdminSettingsPage />} />
+  <Route path="payments" element={<AdminPaymentsPage />} />
+</Route>
     </Routes>
   );
 }

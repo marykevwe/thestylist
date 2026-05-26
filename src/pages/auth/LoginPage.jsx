@@ -1,44 +1,82 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // MOCK USERS (no API)
+  const users = [
+    { email: "admin@test.com", password: "1234", role: "admin" },
+    { email: "pro@test.com", password: "1234", role: "professional" },
+    { email: "client@test.com", password: "1234", role: "client" },
+  ];
+
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const data = await login(form);
-      navigate(data.user.role === "admin" ? "/admin" : data.user.role === "professional" ? "/pro" : "/client");
-    } catch (err) {
-      setError(err?.response?.data?.message || "Login failed");
+
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!user) {
+      alert("Invalid email or password");
+      return;
+    }
+
+    // save login session
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // redirect by role
+    switch (user.role) {
+      case "admin":
+        navigate("/admin");
+        break;
+      case "professional":
+        navigate("/pro");
+        break;
+      default:
+        navigate("/client");
     }
   };
 
   return (
-    <section className="py-20">
-      <div className="page-shell max-w-xl">
-        <div className="card p-8">
-          <h1 className="text-3xl font-black">Welcome back</h1>
-          <p className="mt-2 text-slate-500">Login to manage bookings, clients, or your business.</p>
-          <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
-            <div>
-              <label className="label">Email</label>
-              <input className="input" type="email" value={form.email} onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))} />
-            </div>
-            <div>
-              <label className="label">Password</label>
-              <input className="input" type="password" value={form.password} onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))} />
-            </div>
-            {error && <div className="rounded-2xl bg-red-50 p-4 text-sm text-red-600">{error}</div>}
-            <button className="btn-primary w-full">Login</button>
-          </form>
-          <p className="mt-6 text-sm text-slate-500">No account yet? <Link to="/register" className="font-semibold text-brand-700">Create one</Link></p>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <form
+        onSubmit={handleLogin}
+        className="w-full max-w-sm bg-white p-6 rounded-xl shadow"
+      >
+        <h1 className="text-2xl font-bold mb-4">Login</h1>
+
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full border p-2 mb-3 rounded"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full border p-2 mb-3 rounded"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button className="w-full bg-black text-white py-2 rounded">
+          Login
+        </button>
+
+        <div className="text-xs text-gray-500 mt-4">
+          <p>Demo accounts:</p>
+          <p>admin@test.com / 1234</p>
+          <p>pro@test.com / 1234</p>
+          <p>client@test.com / 1234</p>
         </div>
-      </div>
-    </section>
+      </form>
+    </div>
   );
 }
