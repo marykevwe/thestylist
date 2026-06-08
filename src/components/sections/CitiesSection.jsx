@@ -1,55 +1,59 @@
-// public/sections/CitiesSection.jsx
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cities, cityServices } from "../../data/homeData";
 
 export default function CitiesSection() {
-  // default first city open, matching StyleSeat behaviour
   const [openCity, setOpenCity] = useState(cities[0]);
-
   const toggle = (city) => setOpenCity(openCity === city ? null : city);
 
   return (
-    <section className="bg-white px-4 py-12 md:py-16">
+    <section className="bg-brand-50 px-4 py-12 md:py-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-['Playfair_Display'] text-[#0e2a1e] text-2xl md:text-3xl font-bold mb-6">
+        <h2 className="font-playfair text-brand-900 text-2xl md:text-3xl font-bold mb-2">
           Browse popular hair services
         </h2>
+        <p className="font-dmsans text-brand-400 text-sm mb-8">
+          Explore top-rated pros by city and service
+        </p>
 
-        <div className="divide-y divide-gray-100 border-t border-gray-100">
-          {cities.map((city) => (
-            <div key={city}>
-              {/* Accordion header */}
-              <button
-                onClick={() => toggle(city)}
-                className="w-full flex items-center justify-between py-4 text-left group"
-              >
-                <span className="font-['DM_Sans'] font-semibold text-[#1a1a1a] text-base group-hover:text-[#0e2a1e] transition-colors">
-                  {city}
-                </span>
-                {openCity === city ? (
-                  <ChevronUp size={18} className="text-gray-500" />
-                ) : (
-                  <ChevronDown size={18} className="text-gray-400" />
+        <div className="divide-y divide-brand-100 border-t border-brand-100">
+          {cities.map((city) => {
+            const isOpen = openCity === city;
+            return (
+              <div key={city}>
+                <button
+                  onClick={() => toggle(city)}
+                  className={`w-full flex items-center justify-between py-4 text-left group transition-colors ${isOpen ? "text-brand-700" : "text-brand-900"}`}
+                >
+                  <span className="font-dmsans font-semibold text-base group-hover:text-brand-700 transition-colors">
+                    {city}
+                  </span>
+                  {isOpen ? (
+                    <ChevronUp size={18} className="text-brand-500" />
+                  ) : (
+                    <ChevronDown size={18} className="text-brand-300" />
+                  )}
+                </button>
+
+                {isOpen && (
+                  <div className="flex flex-wrap gap-3 pb-5">
+                    {cityServices.map((service) => {
+  const label = service + " in " + city;
+  return (
+    
+      key={service}
+      href="#"
+      className="font-dmsans text-sm text-brand-600 hover:text-brand-900 underline underline-offset-4 transition-colors"
+    >
+      {label}
+    </a>
+  );
+})}
+                  </div>
                 )}
-              </button>
-
-              {/* Accordion body */}
-              {openCity === city && (
-                <div className="flex flex-wrap gap-4 pb-4">
-                  {cityServices.map((service) => (
-                    <a
-                      key={service}
-                      href="#"
-                      className="font-['DM_Sans'] text-sm text-gray-500 hover:text-[#0e2a1e] underline underline-offset-4 transition-colors"
-                    >
-                      {service}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

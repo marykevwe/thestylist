@@ -3,26 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  {
-    img: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&q=80&fit=crop",
-    label: "Box Braids",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1200&q=80&fit=crop",
-    label: "Locs",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=80&fit=crop",
-    label: "Nail Art",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1560869713-ba5b0a637d2a?w=1200&q=80&fit=crop",
-    label: "Lash Extensions",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1614267861476-0d129972a0f4?w=1200&q=80&fit=crop",
-    label: "Wig Installs",
-  },
+  { img: "/images/braids.jpg", label: "Box Braids" },
+  { img: "/images/locs.jpg", label: "Locs" },
+  { img: "/images/nails.jpg", label: "Nail Art" },
+  { img: "/images/lashes.jpg", label: "Lash Extensions" },
+  { img: "/images/wigs.jpg", label: "Wig Installs" },
 ];
 
 export default function HeroSection() {
@@ -48,7 +33,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden h-[520px] bg-[#831843]">
+    <section className="relative overflow-hidden h-[520px] bg-brand-900">
       {/* Carousel track */}
       <div
         className="flex h-full transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.18,1)]"
@@ -61,9 +46,7 @@ export default function HeroSection() {
               alt={slide.label}
               className="w-full h-full object-cover"
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#831843]/85 via-[#b41e5a]/30 to-transparent" />
-            {/* Slide label */}
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-900/85 via-brand-700/30 to-transparent" />
             <span className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/15 border border-white/30 text-white text-xs font-medium px-4 py-1.5 rounded-full font-['DM_Sans'] backdrop-blur-sm whitespace-nowrap">
               {slide.label}
             </span>
@@ -77,7 +60,7 @@ export default function HeroSection() {
           Discover & Book Local <br className="hidden sm:block" />
           Hair Professionals
         </h1>
-        <p className="font-['DM_Sans'] text-[#a8d5b5] text-base md:text-lg mb-6 max-w-md text-center">
+        <p className="font-['DM_Sans'] text-brand-200 text-base md:text-lg mb-6 max-w-md text-center">
           Connect with top-rated stylists, barbers, and beauty pros near you
         </p>
 
@@ -109,7 +92,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Prev / Next arrows */}
+      {/* Arrows */}
       <button
         onClick={() => handleNav(-1)}
         className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/15 border border-white/30 text-white flex items-center justify-center hover:bg-white/30 transition-colors"
@@ -125,7 +108,7 @@ export default function HeroSection() {
         <ChevronRight size={20} />
       </button>
 
-      {/* Dot indicators */}
+      {/* Dots */}
       <div className="absolute bottom-3 right-4 z-20 flex gap-1.5">
         {slides.map((_, i) => (
           <button

@@ -1,15 +1,15 @@
 // public/data/homeData.js
 
 export const categories = [
-  { name: "Braids",        img: "https://images.unsplash.com/photo-1590447306767-4b4a51e78c5e?w=400&q=80" },
-  { name: "Natural Hair",  img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" },
-  { name: "Haircut",       img: "https://images.unsplash.com/photo-1560066984-138daaa8e3f9?w=400&q=80" },
-  { name: "Silk Press",    img: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80" },
-  { name: "Locs",          img: "https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=400&q=80" },
-  { name: "Colour",        img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80" },
-  { name: "Weaves",        img: "https://images.unsplash.com/photo-1620122830785-a2ac9f68b0d1?w=400&q=80" },
-  { name: "Nails",         img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" },
-  { name: "Eyelashes",     img: "https://images.unsplash.com/photo-1631214499177-e8e9e4e3d945?w=400&q=80" },
+  { name: "Braids",       img: "/images/braids.jpg" },
+  { name: "Natural Hair", img: "/images/natural-hair.jpg" },
+  { name: "Haircut",      img: "/images/haircut.jpg" },
+  { name: "Silk Press",   img: "/images/silk-press.jpg" },
+  { name: "Locs",         img: "/images/locs.jpg" },
+  { name: "Colour",       img: "/images/colour.jpg" },
+  { name: "Weaves",       img: "/images/weaves.jpg" },
+  { name: "Nails",        img: "/images/nails.jpg" },
+  { name: "Eyelashes",    img: "/images/eyelashes.jpg" },
 ];
 
 export const pros = [
@@ -21,7 +21,7 @@ export const pros = [
     reviews: 312,
     bookings: "500+",
     badge: "Loved by Clients",
-    img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80",
+    img: "/images/pro-amaka.jpg",
   },
   {
     name: "Chisom Eze",
@@ -31,7 +31,7 @@ export const pros = [
     reviews: 98,
     bookings: null,
     badge: "Loved by Clients",
-    img: "https://images.unsplash.com/photo-1595959183082-7b570b7e08e9?w=400&q=80",
+    img: "/images/pro-chisom.jpg",
   },
   {
     name: "Blessing Adaora",
@@ -41,7 +41,7 @@ export const pros = [
     reviews: 204,
     bookings: "200+",
     badge: null,
-    img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80",
+    img: "/images/pro-blessing.jpg",
   },
   {
     name: "Kemi Fashola",
@@ -51,7 +51,7 @@ export const pros = [
     reviews: 145,
     bookings: "100+",
     badge: "Loved by Clients",
-    img: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80",
+    img: "/images/pro-kemi.jpg",
   },
 ];
 
