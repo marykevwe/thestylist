@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  { img: "/Images/braids2.jpg", label: "Braids" },
-  { img: "/Images/locks1.jpg", label: "Locs" },
-  { img: "/Images/nails1.jpg", label: "Nail Art" },
-  { img: "/Images/lashs4.jpg", label: "Lash Extensions" },
-  { img: "/Images/wig install.jpg", label: "Wig Installs" },
+  { img: "/images/braids2.jpg", label: "Braids" },
+  { img: "/images/locks1.jpg", label: "Locs" },
+  { img: "/images/nails1.jpg", label: "Nail Art" },
+  { img: "/images/lashs4.jpg", label: "Lash Extensions" },
+  { img: "/images/wig install.jpg", label: "Wig Installs" },
 ];
 
 export default function HeroSection() {
