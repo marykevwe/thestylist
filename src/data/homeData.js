@@ -5,7 +5,7 @@ export const categories = [
   { name: "Natural Hair", img: "/images/natural-hair.jpg" },
   { name: "Haircut",      img: "/images/haircut.jpg" },
   { name: "Silk Press",   img: "/images/silk-press.jpg" },
-  { name: "Locs",         img: "/Images/locks1.jpg" },
+  { name: "Locs",         img: "/Images/locks.jpg" },
   { name: "Colour",       img: "/images/colour.jpg" },
   { name: "Weaves",       img: "/images/weaves.jpg" },
   { name: "Nails",        img: "/Images/nails.jpg" },
