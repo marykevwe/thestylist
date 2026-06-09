@@ -1,15 +1,15 @@
 // public/data/homeData.js
 
 export const categories = [
-  { name: "Braids",       img: "/images/braids.jpg" },
+  { name: "Braids",       img: "/Images/braids.jpg" },
   { name: "Natural Hair", img: "/images/natural-hair.jpg" },
   { name: "Haircut",      img: "/images/haircut.jpg" },
   { name: "Silk Press",   img: "/images/silk-press.jpg" },
-  { name: "Locs",         img: "/images/locs.jpg" },
+  { name: "Locs",         img: "/Images/locks1.jpg" },
   { name: "Colour",       img: "/images/colour.jpg" },
   { name: "Weaves",       img: "/images/weaves.jpg" },
-  { name: "Nails",        img: "/images/nails.jpg" },
-  { name: "Eyelashes",    img: "/images/eyelashes.jpg" },
+  { name: "Nails",        img: "/Images/nails.jpg" },
+  { name: "Eyelashes",    img: "/Images/lashs1.jpg" },
 ];
 
 export const pros = [

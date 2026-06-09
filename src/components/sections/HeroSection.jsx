@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  { img: "/images/braids.jpg", label: "Box Braids" },
-  { img: "/images/locs.jpg", label: "Locs" },
-  { img: "/images/nails.jpg", label: "Nail Art" },
-  { img: "/images/lashes.jpg", label: "Lash Extensions" },
-  { img: "/images/wigs.jpg", label: "Wig Installs" },
+  { img: "/Images/braids2.jpg", label: "Braids" },
+  { img: "/Images/locks1.jpg", label: "Locs" },
+  { img: "/Images/nails1.jpg", label: "Nail Art" },
+  { img: "/Images/lashs4.jpg", label: "Lash Extensions" },
+  { img: "/Images/wig install.jpg", label: "Wig Installs" },
 ];
 
 export default function HeroSection() {
@@ -44,7 +44,7 @@ export default function HeroSection() {
             <img
               src={slide.img}
               alt={slide.label}
-              className="w-full h-full object-cover"
+              className="w-full h-full "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-900/85 via-brand-700/30 to-transparent" />
             <span className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/15 border border-white/30 text-white text-xs font-medium px-4 py-1.5 rounded-full font-['DM_Sans'] backdrop-blur-sm whitespace-nowrap">
