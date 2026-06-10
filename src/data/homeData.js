@@ -7,9 +7,9 @@ export const categories = [
   { name: "Silk Press",   img: "/images/silk-press.jpg" },
   { name: "Locs",         img: "/images/locks.jpg" },
   { name: "Colour",       img: "/images/colour.jpg" },
-  { name: "Weaves",       img: "/images/weaves.jpg" },
+  { name: "Weaves",       img: "/images/wig install.jpg" },
   { name: "Nails",        img: "/images/nails.jpg" },
-  { name: "Eyelashes",    img: "/images/lashs1.jpg" },
+  { name: "Eyelashes",    img: "/images/lashs4.jpg" },
 ];
 
 export const pros = [

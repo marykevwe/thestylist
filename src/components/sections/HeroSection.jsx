@@ -5,9 +5,9 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   { img: "/images/braids2.jpg", label: "Braids" },
   { img: "/images/locks1.jpg", label: "Locs" },
-  { img: "/images/nails1.jpg", label: "Nail Art" },
+  { img: "/images/lashs1.jpg", label: "Nail Art" },
   { img: "/images/lashs4.jpg", label: "Lash Extensions" },
-  { img: "/images/wig install.jpg", label: "Wig Installs" },
+  { img: "/images/wihinstall.jpg", label: "Wig Installs" },
 ];
 
 export default function HeroSection() {
