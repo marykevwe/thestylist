@@ -1,17 +1,52 @@
-// public/data/homeData.js
+import braids from "../assets/images/braids.jpg";
+import braids1 from "../assets/images/braids1.jpg";
+import braids2 from "../assets/images/braids2.jpg";
+import braids4 from "../assets/images/braids4.jpg";
+import briads from "../assets/images/briads.jpg";
 
+import lashs1 from "../assets/images/lashs1.jpg";
+import lashs4 from "../assets/images/lashs4.jpg";
+
+import locks from "../assets/images/locks.jpg";
+import locks1 from "../assets/images/locks1.jpg";
+import locks3 from "../assets/images/locks3.jpg";
+import locks4 from "../assets/images/locks4.jpg";
+
+import nails from "../assets/images/nails.jpg";
+import nails1 from "../assets/images/nails1.jpg";
+
+import wigInstall from "../assets/images/wig install.jpg";
+import wihinstall from "../assets/images/wihinstall.jpg";
+
+/* =========================
+   CATEGORIES
+========================= */
 export const categories = [
-  { name: "Braids",       img: "/images/braids.jpg" },
-  { name: "Natural Hair", img: "/images/natural-hair.jpg" },
-  { name: "Haircut",      img: "/images/haircut.jpg" },
-  { name: "Silk Press",   img: "/images/silk-press.jpg" },
-  { name: "Locs",         img: "/images/locks.jpg" },
-  { name: "Colour",       img: "/images/colour.jpg" },
-  { name: "Weaves",       img: "/images/wig install.jpg" },
-  { name: "Nails",        img: "/images/nails.jpg" },
-  { name: "Eyelashes",    img: "/images/lashs4.jpg" },
+  { name: "Braids", img: braids },
+  { name: "Braids Style 1", img: braids1 },
+  { name: "Braids Style 2", img: braids2 },
+  { name: "Braids Style 4", img: braids4 },
+  { name: "Braids (Alt)", img: briads },
+
+  { name: "Locs", img: locks },
+  { name: "Locs Style 1", img: locks1 },
+  { name: "Locs Style 3", img: locks3 },
+  { name: "Locs Style 4", img: locks4 },
+
+  { name: "Nails", img: nails },
+  { name: "Nails Style 1", img: nails1 },
+
+  { name: "Lashes", img: lashs4 },
+  { name: "Lashes Style 1", img: lashs1 },
+
+  { name: "Wig Install", img: wigInstall },
+  { name: "Wig Install Alt", img: wihinstall },
 ];
 
+/* =========================
+   PROS (PLACEHOLDERS)
+   NOTE: You MUST add real images for these later
+========================= */
 export const pros = [
   {
     name: "Amaka Osei",
@@ -21,7 +56,7 @@ export const pros = [
     reviews: 312,
     bookings: "500+",
     badge: "Loved by Clients",
-    img: "/images/pro-amaka.jpg",
+    img: braids1,
   },
   {
     name: "Chisom Eze",
@@ -31,7 +66,7 @@ export const pros = [
     reviews: 98,
     bookings: null,
     badge: "Loved by Clients",
-    img: "/images/pro-chisom.jpg",
+    img: locks1,
   },
   {
     name: "Blessing Adaora",
@@ -41,7 +76,7 @@ export const pros = [
     reviews: 204,
     bookings: "200+",
     badge: null,
-    img: "/images/pro-blessing.jpg",
+    img: nails1,
   },
   {
     name: "Kemi Fashola",
@@ -51,10 +86,13 @@ export const pros = [
     reviews: 145,
     bookings: "100+",
     badge: "Loved by Clients",
-    img: "/images/pro-kemi.jpg",
+    img: braids4,
   },
 ];
 
+/* =========================
+   BUSINESS FEATURES
+========================= */
 export const businessFeatures = [
   {
     title: "Grow your business",
@@ -70,6 +108,9 @@ export const businessFeatures = [
   },
 ];
 
+/* =========================
+   REVIEWS
+========================= */
 export const reviews = [
   {
     title: "Love it....",
@@ -91,5 +132,22 @@ export const reviews = [
   },
 ];
 
-export const cities = ["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Kano", "Enugu"];
-export const cityServices = ["Braids", "Natural Hair", "Haircut", "Weaves", "Barber"];
+/* =========================
+   CITIES
+========================= */
+export const cities = [
+  "Lagos",
+  "Abuja",
+  "Port Harcourt",
+  "Ibadan",
+  "Kano",
+  "Enugu",
+];
+
+export const cityServices = [
+  "Braids",
+  "Natural Hair",
+  "Haircut",
+  "Weaves",
+  "Barber",
+];
